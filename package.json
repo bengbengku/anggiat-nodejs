@@ -1,0 +1,25 @@
+{
+  "name": "anggiat-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bengbengku/anggiat-nodejs.git"
+  },
+  "keywords": [],
+  "author": "Anggiat Benget Napitupulu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bengbengku/anggiat-nodejs/issues"
+  },
+  "homepage": "https://github.com/bengbengku/anggiat-nodejs#readme",
+  "dependencies": {
+    "moment": "^2.29.4",
+    "nodemon": "^2.0.20"
+  }
+}
