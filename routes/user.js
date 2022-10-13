@@ -20,7 +20,6 @@ router.get('/post/:id', (req, res) => {
 router.post('/product/', upload.single('image'), (req, res) => {
   const { name, price } = req.body
   const image = req.file
-  console.log(image)
   res.json({
     name,
     price,
