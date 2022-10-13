@@ -1,7 +1,8 @@
 const express = require('express')
 const router = require('./routes/user')
 const { log } = require('./middlewares/logger')
-
+const dotenv = require('dotenv')
+dotenv.config()
 const app = express()
 
 app.use(log)
@@ -19,4 +20,9 @@ app.use((req, res, next) => {
 
 app.listen(8000, () => {
   console.log('server running on http://localhost:8000')
+})
+
+const PORT = process.env.PORT || 8000
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`)
 })
