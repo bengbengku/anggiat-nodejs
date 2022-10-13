@@ -1,4 +1,8 @@
 const router = require('express').Router()
+const multer = require('multer')
+const upload = multer({ dest: 'uploads/' })
+const fs = require('fs')
+const path = require('path')
 
 router.get('/', (req, res) => {
   res.send({
@@ -13,8 +17,15 @@ router.get('/post/:id', (req, res) => {
   const { page, total } = req.query
   res.json({ id, page, total })
 })
-router.post('/product', (req, res) => {
-  res.json(req.body)
+router.post('/product/', upload.single('image'), (req, res) => {
+  const { name, price } = req.body
+  const image = req.file
+  console.log(image)
+  res.json({
+    name,
+    price,
+    image,
+  })
 })
 
 module.exports = router
