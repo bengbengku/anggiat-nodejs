@@ -11,9 +11,14 @@ router.get('/', (req, res) => {
 })
 router.get('/post/:id', (req, res) => {
   const { id } = req.params
-  console.log(req.query)
   const { page, total } = req.query
   res.json({ id, page, total })
+})
+router.get('/foods', (req, res) => {
+  res.json({
+    chineseFood: 'Mie Tiaw',
+    indonesianFood: 'Nasi Goreng',
+  })
 })
 router.post('/product/', upload.single('image'), (req, res) => {
   const { name, price } = req.body
